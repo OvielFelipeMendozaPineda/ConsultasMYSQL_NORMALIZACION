@@ -248,24 +248,174 @@
 
 2. ## Comandos DML.
 
-   
+    ```sql
+    
+    INSERT INTO ciudad (nombre_ciudad, region_id)
+    VALUES ('Madrid', 1),
+           ('Barcelona', 2),
+           ('Sevilla', 3);
+    
+    
+    INSERT INTO cliente (nombre_cliente, apellido_1_cliente, apellido_2_cliente, rep_ventas_id, limite_credito)
+    VALUES ('Juan', 'Gómez', 'Martínez', 1, 500),
+           ('María', 'López', 'Sánchez', 2, 700),
+           ('Pedro', 'Rodríguez', 'García', 3, 1000);
+    
+    
+    INSERT INTO contacto (nombre_contacto, apellido_contacto, emai_contacto, cliente_id)
+    VALUES ('Luis', 'Pérez', 'luis@example.com', 1),
+           ('Ana', 'García', 'ana@example.com', 2),
+           ('Carlos', 'Ruiz', 'carlos@example.com', 3);
+    
+    INSERT INTO detalle_pedido (pedido_id, detalle_producto_id, cantidad, precio_unidad, numero_linea, transaccion_id)
+    VALUES (1, 1, 2, 10.5, 1, 1),
+           (2, 2, 3, 15.75, 1, 2),
+           (3, 3, 1, 20, 1, 3);
+    
+    
+    INSERT INTO detalle_producto (id_producto, id_gama, id_dimension, id_proveedor, descripcion, stock, precio_venta, precio_proveedor)
+    VALUES (1, 1, 1, 1, 'Producto 1', 50, 20, 15),
+           (2, 2, 2, 2, 'Producto 2', 30, 25, 18),
+           (3, 3, 3, 3, 'Producto 3', 20, 30, 22);
+    
+    
+    INSERT INTO dimension (dimension)
+    VALUES ('Dimensión 1'),
+           ('Dimensión 2'),
+           ('Dimensión 3');
+    
+    
+    INSERT INTO direccion_cliente (linea_1, linea_2, codigo_postal, ciudad_id, cliente_id)
+    VALUES ('Calle Principal 123', 'Piso 2', '28001', 1, 1),
+           ('Avenida Central 456', NULL, '28940', 2, 2),
+           ('Plaza Mayor 789', NULL, '28942', 3, 3);
+    
+    
+    INSERT INTO direccion_oficina (linea_1, linea_2, codigo_postal, ciudad_id, oficina_id)
+    VALUES ('Calle Principal 123', 'Piso 2', '28001', 1, 1),
+           ('Avenida Central 456', NULL, '28940', 2, 2),
+           ('Plaza Mayor 789', NULL, '28942', 3, 3);
+    
+    
+    INSERT INTO empleado (nombre_empledo, apellido_1, apellido_2, oficina_id, codigo_jefe, id_puesto)
+    VALUES ('Ana', 'Martínez', 'Gómez', 1, NULL, 1),
+           ('Carlos', 'González', 'López', 2, 1, 2),
+           ('Luis', 'Ruiz', 'Pérez', 3, 2, 3);
+    
+    
+    INSERT INTO estado (estado)
+    VALUES ('Activo'),
+           ('Inactivo');
+    
+    
+    INSERT INTO forma_pago (tipo)
+    VALUES ('Efectivo'),
+           ('Tarjeta de crédito'),
+           ('Transferencia bancaria');
+    
+    
+    INSERT INTO forma_pago_cliente (id_forma_pago, id_cliente)
+    VALUES (1, 1),
+           (2, 2),
+           (3, 3);
+    
+    
+    INSERT INTO gama (descripcion_texto, descripcion_html, imagen)
+    VALUES ('Gama 1', '<b>Gama 1</b>', 'imagen1.jpg'),
+           ('Gama 2', '<b>Gama 2</b>', 'imagen2.jpg'),
+           ('Gama 3', '<b>Gama 3</b>', 'imagen3.jpg');
+    
+    
+    INSERT INTO oficina (nombre_oficina)
+    VALUES ('Oficina Central'),
+           ('Sucursal Norte'),
+           ('Sucursal Sur');
+    
+    
+    INSERT INTO pais (nombre_pais)
+    VALUES ('España'),
+           ('Francia'),
+           ('Alemania');
+    
+    INSERT INTO pedido (fecha_pedido, fecha_esperada, fecha_entrega, comentarios, id_cliente, estado_id)
+    VALUES ('2023-01-15', '2023-01-20', '2023-01-18', 'Pedido urgente', 1, 1),
+           ('2023-02-10', '2023-02-15', NULL, 'Pedido estándar', 2, 2),
+           ('2023-03-05', '2023-03-10', NULL, 'Pedido retrasado', 3, 2);
+    
+    
+    INSERT INTO producto (nombre_producto)
+    VALUES ('Producto 1'),
+           ('Producto 2'),
+           ('Producto 3');
+    
+    
+    INSERT INTO proveedor (nombre_proveedor)
+    VALUES ('Proveedor 1'),
+           ('Proveedor 2'),
+           ('Proveedor 3');
+    
+    
+    INSERT INTO puesto (nombre_puesto)
+    VALUES ('Vendedor'),
+           ('Gerente de ventas'),
+           ('Cajero');
+    
+    
+    INSERT INTO region (nombre_region, pais_id)
+    VALUES ('Comunidad de Madrid', 1),
+           ('Provenza-Alpes-Costa Azul', 2),
+           ('Renania del Norte-Westfalia', 3);
+    
+    
+    INSERT INTO telefono_cliente (cliente_id, tipo_telefono_id, numero, fax)
+    VALUES (1, 1, '123456789', NULL),
+           (2, 2, '987654321', NULL),
+           (3, 3, '456789123', '789456123');
+    
+    
+    INSERT INTO telefono_empleado (empleado_id, tipo_telefono_id, numero)
+    VALUES (1, 1, '987654321'),
+           (2, 2, '123456789'),
+           (3, 3, '456789123');
+    
+    
+    INSERT INTO telefono_oficina (oficina_id, tipo_telefono_id, numero)
+    VALUES (1, 1, '123456789'),
+           (2, 2, '987654321'),
+           (3, 3, '456789123');
+    
+    
+    INSERT INTO transaccion (id_forma_pago_cliente, fecha_pago, total)
+    VALUES (1, '2023-01-18', 100),
+           (2, '2023-02-14', 200),
+           (3, '2023-03-08', 300);
+    
+    INSERT INTO tipo_telefono (tipo)
+    VALUES ('Móvil'),
+           ('Fijo'),
+           ('Fax');
+    
+    ```
+
+    
 
 3. ## Explicación de la normalización.
 
    #### Tablas en 1FN:
 
-   imagenes/Tablas en 1FN.png
+    ![alt text](<imagenes/Tablas en 1FN.png>)
 
    Se caracterizan por que no hay múltiples valores en una misma celda, hay una sola llave primaria y cada atributo es atómico.
 
    Tablas en 2FN
 
-   imagenes/Tablas en 2FN.png
+    ![alt text](<imagenes/Tablas en 2FN.png>)
+    
    Para la normalizacion de estas tablas, se normalizó teniendo en cuenta desde la 1FN, definiendo la llave primaria, atributos atómicos y se eliminaron dependecias parciales
 
 4. ## ERD normalizado.
 
-    imagenes/ERD COMPLETO.png
+    ![alt text](<imagenes/ERD COMPLETO.png>)
 
 5. ## Resultados de las consultas.
 
@@ -471,16 +621,71 @@
    
    13. Devuelve un listado con todos los pagos que se realizaron en el
        año 2008 mediante Paypal. Ordene el resultado de mayor a menor.
+   
+       ```sql
+       SELECT trans.id, trans.id_forma_pago_cliente, trans.fecha_pago, trans.total
+       FROM transaccion AS trans
+       INNER JOIN forma_pago_cliente AS fpc ON trans.id_forma_pago_cliente = fpc.id
+       INNER JOIN forma_pago AS fp ON fpc.id_forma_pago = fp.id
+       WHERE fp.tipo = 'Paypal' AND YEAR(trans.fecha_pago) = 2008;
+        id | id_forma_pago_cliente | fecha_pago | total
+       ----+-----------------------+------------+-------
+       (0 filas)
+       ```
+   
        
    14. Devuelve un listado con todas las formas de pago que aparecen en la
-   tabla pago. Tenga en cuenta que no deben aparecer formas de pago
-   repetidas.
+       tabla pago. Tenga en cuenta que no deben aparecer formas de pago
+       repetidas.
+   
+       ```sql
+       SELECT DISTINCT tipo FROM forma_pago
+                 tipo
+       ------------------------
+        Apple Pay
+        Transferencia bancaria
+        Cryptomonedas
+        Cheque
+        Pago en efectivo
+        Google Pay
+        Tarjeta de crÚdito
+        PayPal
+       ```
+   
+       
    15. Devuelve un listado con todos los productos que pertenecen a la
-   gama Ornamentales y que tienen más de 100 unidades en stock. El listado
-   deberá estar ordenado por su precio de venta, mostrando en primer lugar
-   los de mayor precio.
+       gama Ornamentales y que tienen más de 100 unidades en stock. El listado
+       deberá estar ordenado por su precio de venta, mostrando en primer lugar
+       los de mayor precio.
+   
+       ```sql
+       SELECT p.id, p.nombre_producto, dp.precio_venta, dp.stock
+       FROM producto AS p
+       INNER JOIN detalle_producto AS dp ON p.id = dp.id_producto
+       INNER JOIN gama AS g ON dp.id_gama = g.id
+       WHERE g.descripcion_texto = 'Ornamentales' AND dp.stock > 100
+       ORDER BY dp.precio_venta DESC;
+        id | nombre_producto | precio_venta | stock
+       ----+-----------------+--------------+-------
+       (0 filas)
+       
+       ```
+   
+       
    16. Devuelve un listado con todos los clientes que sean de la ciudad de Madrid y
-   cuyo representante de ventas tenga el código de empleado 11 o 30.
+       cuyo representante de ventas tenga el código de empleado 11 o 30.
+   
+       ```sql
+       SELECT  c.id , c.nombre_cliente, c.apellido_1_cliente,  c.apellido_2_cliente, c.rep_ventas_id,  c.limite_credito
+       FROM cliente AS c
+       INNER JOIN direccion_cliente AS dc ON c.id = dc.cliente_id
+       INNER JOIN ciudad AS ci ON dc.ciudad_id = ci.id
+       WHERE ci.nombre_ciudad = 'Madrid' AND c.rep_ventas_id = 11 OR c.rep_ventas_id = 30;
+        id | nombre_cliente | apellido_1_cliente | apellido_2_cliente | rep_ventas_id | limite_credito
+       ----+----------------+--------------------+--------------------+---------------+--------------
+       ```
+   
+       
    
    ### Consultas multitabla (Composición interna)
    
@@ -488,17 +693,99 @@
    sintaxis de SQL2 se deben resolver con INNER JOIN y NATURAL JOIN.
    
    1. Obtén un listado con el nombre de cada cliente y el nombre y apellido de su
-   representante de ventas.
+     representante de ventas.
+   
+     ```sql
+     SELECT c.nombre_cliente, e.nombre_empledo, e.apellido_1
+     FROM cliente as c
+     INNER JOIN empleado as e ON c.id = e.id;
+      nombre_cliente | nombre_empledo | apellido_1
+     ----------------+----------------+------------
+      Carlos         | Juan           | Gonzßlez
+      Ana            | MarÝa          | MartÝnez
+      Pedro          | Carlos         | RodrÝguez
+     ```
+   
+     
    2. Muestra el nombre de los clientes que hayan realizado pagos junto con el
-   nombre de sus representantes de ventas.
+     nombre de sus representantes de ventas.
+   
+     ```sql
+     SELECT c.nombre_cliente, co.nombre_contacto AS representante_ventas
+     FROM cliente AS c
+     INNER JOIN contacto AS co ON c.rep_ventas_id = co.id
+     INNER JOIN forma_pago_cliente AS fpc ON c.id = fpc.id_cliente
+     INNER JOIN transaccion AS t ON fpc.id = t.id_forma_pago_cliente;
+      nombre_cliente | representante_ventas
+     ----------------+----------------------
+      Carlos         | MarÝa
+      Ana            | Juan
+      Pedro          | MarÝa
+      Carlos         | MarÝa
+      Ana            | Juan
+      Pedro          | MarÝa
+     ```
+   
+     
    3. Muestra el nombre de los clientes que no hayan realizado pagos junto con
-   el nombre de sus representantes de ventas.
+     el nombre de sus representantes de ventas.
+   
+     ```sql
+     SELECT c.nombre_cliente, co.nombre_contacto AS representante_ventas
+     FROM cliente AS c
+     LEFT JOIN contacto AS co ON c.rep_ventas_id = co.id
+     LEFT JOIN forma_pago_cliente AS fpc ON c.id = fpc.id_cliente
+     LEFT JOIN transaccion AS t ON fpc.id = t.id_forma_pago_cliente
+     WHERE t.id IS NULL;
+      nombre_cliente | representante_ventas
+     ----------------+----------------------
+     (0 filas)
+     ```
+   
+     
    4. Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus
-   representantes junto con la ciudad de la oficina a la que pertenece el
-   representante.
+     representantes junto con la ciudad de la oficina a la que pertenece el
+     representante.
+   
+     ```sql
+     SELECT c.nombre_cliente, co.nombre_contacto AS representante_ventas, p.nombre_puesto
+     FROM cliente AS c
+     INNER JOIN  contacto AS co ON c.rep_ventas_id = co.id
+     INNER JOIN empleado AS e ON c.rep_ventas_id = e.id
+     INNER JOIN puesto AS p ON e.id_puesto = p.id
+     INNER JOIN forma_pago_cliente AS fpc ON c.id = fpc.id_cliente
+     INNER JOIN transaccion AS t ON fpc.id = t.id_forma_pago_cliente;
+      nombre_cliente | representante_ventas |   nombre_puesto
+     ----------------+----------------------+-------------------
+      Carlos         | MarÝa                | Vendedor
+      Ana            | Juan                 | Gerente de Ventas
+      Pedro          | MarÝa                | Vendedor
+      Carlos         | MarÝa                | Vendedor
+      Ana            | Juan                 | Gerente de Ventas
+      Pedro          | MarÝa                | Vendedor
+     ```
+   
+     
    5. Devuelve el nombre de los clientes que no hayan hecho pagos y el nombre
-   de sus representantes junto con la ciudad de la oficina a la que pertenece el
-   representante.
+     de sus representantes junto con la ciudad de la oficina a la que pertenece el
+     representante.
+   
+     ```sql
+     SELECT  c.nombre_cliente, co.nombre_contacto AS representante_ventas, ci.nombre_ciudad AS ciudad_representante
+     FROM  cliente AS c
+     INNER JOIN contacto AS co ON c.rep_ventas_id = co.id
+     INNER JOIN empleado AS e ON c.rep_ventas_id = e.id
+     INNER JOIN direccion_oficina AS o ON e.oficina_id = o.id
+     INNER JOIN ciudad AS ci ON o.ciudad_id = ci.id
+     LEFT JOIN forma_pago_cliente AS fpc ON c.id = fpc.id_cliente
+     LEFT JOIN transaccion AS t ON fpc.id = t.id_forma_pago_cliente
+     WHERE t.id IS NULL;
+      nombre_cliente | representante_ventas | ciudad_representante
+     ----------------+----------------------+----------------------
+     (0 filas)
+     ```
+   
+     
    6. Lista la dirección de las oficinas que tengan clientes en Fuenlabrada.
    7. Devuelve el nombre de los clientes y el nombre de sus representantes junto
    con la ciudad de la oficina a la que pertenece el representante.
